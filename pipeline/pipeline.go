@@ -43,7 +43,6 @@ func NewPipeline() *Pipeline {
 }
 
 func (p *Pipeline) Run() {
-	// do something
 	// Start with a set of numbers
 	in := make(chan int)
 
