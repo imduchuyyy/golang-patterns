@@ -26,8 +26,8 @@ func fanIn(inps ...<-chan int) <-chan int {
 
 	// Start a goroutine to close the output channel// once all input inps have been drained.
 	go func() {
+		defer close(out)
 		wg.Wait()
-		close(out)
 	}()
 
 	return out
